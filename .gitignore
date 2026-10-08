@@ -1,0 +1,4 @@
+server/yunniang.db
+__pycache__/
+*.pyc
+video_tmp/
