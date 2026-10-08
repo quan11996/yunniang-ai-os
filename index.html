@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>云酿智链 AI OS · 酒业AI经营决策与全链路增长平台</title>
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<div id="app">
+  <!-- 侧边栏 -->
+  <aside id="sidebar">
+    <div class="brand">
+      <div class="brand-mark">酿</div>
+      <div class="brand-text">
+        <div class="brand-name">云酿智链 <span class="brand-os">AI&nbsp;OS</span></div>
+        <div class="brand-sub">酒业AI经营决策与全链路增长平台</div>
+      </div>
+    </div>
+    <nav id="nav"></nav>
+    <div class="side-foot">
+      <div class="jev-status"><span class="dot" id="beDot"></span><span id="beLabel">后端服务检测中…</span></div>
+      <div class="jev-status" id="jevStatus">
+        <span class="dot" id="jevDot"></span><span id="jevLabel">内置推理引擎</span>
+      </div>
+      <button class="btn-ghost" id="btnApiCfg">接入 Jev / 大模型接口</button>
+      <div class="side-copy">临沂云酿流香信息技术有限公司</div>
+    </div>
+  </aside>
+
+  <!-- 主区域 -->
+  <main id="main">
+    <header id="topbar">
+      <div class="topbar-title" id="viewTitle">总览驾驶舱</div>
+      <div class="topbar-right">
+        <span class="tag tag-gold">人工智能+酒业</span>
+        <span class="tag">高教主赛道 · 本科生创业组</span>
+      </div>
+    </header>
+    <div id="view"></div>
+  </main>
+</div>
+
+<!-- Jev 接口配置弹窗 -->
+<div class="modal-mask" id="apiModal" style="display:none">
+  <div class="modal">
+    <div class="modal-title">接入 Jev / OpenAI 兼容大模型接口</div>
+    <p class="modal-desc">
+      配置后，Agent 工作台将优先调用真实大模型进行推理生成；未配置时使用平台内置的酒业决策引擎，
+      Demo 全程可离线运行。配置仅保存在本机浏览器 localStorage。
+    </p>
+    <label>接口地址（Base URL）</label>
+    <input id="cfgEndpoint" placeholder="如 https://api.example.com/v1" />
+    <label>API Key</label>
+    <input id="cfgKey" type="password" placeholder="sk-..." />
+    <label>模型名称</label>
+    <input id="cfgModel" placeholder="如 jev-llm / gpt-4o-mini" />
+    <div class="modal-actions">
+      <button class="btn-ghost" id="cfgClear">断开并清除</button>
+      <div style="flex:1"></div>
+      <button class="btn-ghost" id="cfgCancel">取消</button>
+      <button class="btn-gold" id="cfgSave">保存配置</button>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/charts.js"></script>
+<script src="assets/js/agent.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
